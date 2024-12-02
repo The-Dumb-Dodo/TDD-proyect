@@ -1,30 +1,59 @@
-// API endpoint for the scores 
-app.post('/update-score', async (req, res) => {
-    const { userId, score } = req.body;
-  
-    const user = await User.findById(userId);
-    if (user) {
-      user.highestScore = Math.max(user.highestScore, score);
-      await user.save();
-      res.json({ success: true, highestScore: user.highestScore });
-    } else {
-      res.status(404).json({ success: false, message: 'User not found' });
-    }
-  });
+require ('dotenv').config()
 
+require('dotenv').config()
 
-// API endpoint for browsing islands 
-  app.get('/islands', async (req, res) => {
-    try {
-      const islands = await Island.find().populate('guardian', 'name'); // Populate guardian name
-      res.json(islands);
-    } catch (error) {
-      res.status(500).json({ success: false, message: 'Error fetching islands' });
-    }
-  });
+// Connection to DB
+require('./config/db.config')
+require('./config/hbs.config')
 
-  // Population de la isla
-  islandSchema.methods.updatePopulation = function () {
-    this.population = this.creatures.length;
-    return this.save();
-  };
+const express = require('express')
+const logger = require('morgan')
+const path = require('path')
+// const { sessionConfig, getCurrentUser } = require('./config/session.config')
+
+const app = express()
+
+// To have access to `body` property in the request
+app.use(express.urlencoded({ extended: false }));
+
+// Normalizes the path to the views folder
+app.set("views", path.join(__dirname, "views"));
+// Sets the view engine to handlebars
+app.set("view engine", "hbs");
+// Handles access to the public folder
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use(logger('dev'))
+
+// app.use(sessionConfig);
+// app.use(getCurrentUser);
+
+const routes = require('./routes/routes')
+app.use('/', routes)
+
+// Manejo de errores
+app.use((req, res, next) => {
+  // this middleware runs whenever requested page is not available
+  res.status(404).render("not-found");
+});
+
+app.use((err, req, res, next) => {
+  // whenever you call next(err), this middleware will handle the error
+  // always logs the error
+  console.error("ERROR", req.method, req.path, err);
+
+  if (err.status === 404) {
+    return res.status(404).render('not-found')
+  }
+
+  // only render if the error ocurred before sending the response
+  if (!res.headersSent) {
+    res.status(500).render("error");
+  }
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
