@@ -20,7 +20,7 @@ module.exports.create = (req, res, next) => {
       })
     
       .catch(error => {
-        console.log("req body1***",req.body)
+        
         console.log("***Entered in error****")
         // Para autorellenar el formulario cuando haya errores, pasamos todos los valores del req.body, menos la password
         const values = {...req.body}

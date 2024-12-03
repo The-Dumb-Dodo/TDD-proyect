@@ -35,6 +35,7 @@ module.exports.doSignin = (req, res, next) => {
 }
 
 module.exports.logout = (req, res, next) => {
+  console.log("entro en logout")
   req.session.destroy()
   res.clearCookie("express-cookie");
   res.redirect('/signin')

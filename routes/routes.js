@@ -31,7 +31,7 @@ router.get('/signin', isNotAuthenticated, authController.signin)
 router.post('/signin', isNotAuthenticated, authController.doSignin)
 
 // //Users log out
-// router.get('/logout', isAuthenticated, authController.logout)
+ router.get('/logout', isAuthenticated, authController.logout)
 
 // //Users 
 // router.get('/profile', isAuthenticated, usersController.getCurrentUserProfile)
