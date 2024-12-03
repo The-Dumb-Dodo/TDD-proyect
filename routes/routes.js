@@ -27,8 +27,8 @@ router.get('/subscribe', isNotAuthenticated, usersController.create)
 router.post('/subscribe', isNotAuthenticated, usersController.doCreate)
 
 //Users sign in 
-// router.get('/signin', isNotAuthenticated, authController.login)
-// router.post('/signin', isNotAuthenticated, authController.doLogin)
+router.get('/signin', isNotAuthenticated, authController.signin)
+router.post('/signin', isNotAuthenticated, authController.doSignin)
 
 // //Users log out
 // router.get('/logout', isAuthenticated, authController.logout)

@@ -1,13 +1,13 @@
 const User = require('../models/User.model')
 
-module.exports.login = (req, res, next) => {
-  res.render('auth/login')
+module.exports.signin = (req, res, next) => {
+  res.render('auth/signin')
 }
 
-module.exports.doLogin = (req, res, next) => {
+module.exports.doSignin = (req, res, next) => {
   // Funcion para renderizar el formulario con el error
   const renderWithErrors = () => {
-    res.render('auth/login', { error: 'Email o contraseña incorrectos', email: req.body.email })
+    res.render('auth/signin', { error: 'Email o contraseña incorrectos', email: req.body.email })
   }
 
   // Busco si hay un usuario con ese email
@@ -25,7 +25,7 @@ module.exports.doLogin = (req, res, next) => {
             return renderWithErrors()
           }
 
-          req.session.userId = user.id; // genero cookie y session
+          //req.session.userId = user.id; // genero cookie y session
           res.redirect('/')
         })
     })
@@ -37,5 +37,5 @@ module.exports.doLogin = (req, res, next) => {
 module.exports.logout = (req, res, next) => {
   req.session.destroy()
   res.clearCookie("express-cookie");
-  res.redirect('/login')
+  res.redirect('/signin')
 }
