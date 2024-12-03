@@ -7,17 +7,21 @@ module.exports.create = (req, res, next) => {
 
   module.exports.doCreate = (req, res, next) => {
 
-    const fields = {
-        ...req.body,
-        image: req.file.path
-      }
-
-    User.create(fields)
+    // const fields = {
+    //     ...req.body,
+    //     image: req.file.path
+    //   }
+    console.log("req body1***",req.body)
+    User.create(req.body)
+   
       .then(() => {
+        console.log("***entered in THEN***")
         res.redirect('/')
       })
     
       .catch(error => {
+        console.log("req body1***",req.body)
+        console.log("***Entered in error****")
         // Para autorellenar el formulario cuando haya errores, pasamos todos los valores del req.body, menos la password
         const values = {...req.body}
         delete values.password

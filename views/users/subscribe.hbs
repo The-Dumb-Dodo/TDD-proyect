@@ -1,45 +1,62 @@
-<h1>Rewild the planet, <br> one goofy adventure at a time !</h1>
+<form action="/subscribe" method="post" >
 
-<form action="/register" method="post" enctype="multipart/form-data">
-  <div class="mb-3">
-    <label for="email" class="form-label">Correo eléctronico</label>
-    <input type="email" class="form-control {{#if errors.email}}is-invalid{{/if}}" id="email" name="email" value="{{values.email}}" required>
+<div class="mb-3">
+     <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input 
+      type="text" 
+      class="form-control {{#if errors.username}}is-invalid{{/if}}" 
+      id="username" 
+      name="username" 
+      value="{{values.username}}" 
+      required>
+    <div class="invalid-feedback">
+      {{errors.username}}
+    </div>
+  </div>
+    <label for="email" class="form-label">Email</label>
+    <input 
+      type="email" 
+      class="form-control {{#if errors.email}}is-invalid{{/if}}" 
+      id="email" 
+      name="email" 
+      value="{{values.email}}" 
+      required>
     <div class="invalid-feedback">
       {{errors.email}}
     </div>
   </div>
 
   <div class="mb-3">
-    <label for="username" class="form-label">Nombre de usuario</label>
-    <input type="text" class="form-control {{#if errors.username}}is-invalid{{/if}}" id="username" name="username"  value="{{values.username}}" required>
-    <div class="invalid-feedback">
-      {{errors.username}}
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <label for="password" class="form-label">Contraseña</label>
-    <input type="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" id="password" name="password" required>
+    <label for="password" class="form-label">Password</label>
+    <input 
+      type="password" 
+      class="form-control {{#if errors.password}}is-invalid{{/if}}" 
+      id="password" 
+      name="password" 
+      required>
     <div class="invalid-feedback">
       {{errors.password}}
     </div>
   </div>
 
+ 
+
   <div class="mb-3">
-    <label for="phone" class="form-label">Teléfono</label>
-    <input type="tel" class="form-control {{#if errors.phone}}is-invalid{{/if}}" id="phone" name="phone"  value="{{values.phone}}" required>
+    <label for="favoriteAnimal" class="form-label">Favorite Animal</label>
+    <input 
+      type="text" 
+      class="form-control {{#if errors.favoriteAnimal}}is-invalid{{/if}}" 
+      id="favoriteAnimal" 
+      name="favoriteAnimal" 
+      value="{{values.favoriteAnimal}}" 
+      required>
     <div class="invalid-feedback">
-      {{errors.phone}}
+      {{errors.favoriteAnimal}}
     </div>
   </div>
 
-  <div class="mb-3">
-    <label for="image" class="form-label">Imagen de perfil</label>
-    <input class="form-control {{#if errors.image}}is-invalid{{/if}}" type="file" id="image" name="image">
-    <div class="invalid-feedback">
-      {{errors.image}}
-    </div>
-  </div>
 
-  <button class="btn btn-primary" type="submit">Crear cuenta</button>
+
+  <button class="btn btn-primary" type="submit">Submit</button>
 </form>
