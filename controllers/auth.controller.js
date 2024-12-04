@@ -25,7 +25,7 @@ module.exports.doSignin = (req, res, next) => {
             return renderWithErrors()
           }
 
-          //req.session.userId = user.id; // genero cookie y session
+          req.session.userId = user.id; // genero cookie y session
           res.redirect('/')
         })
     })

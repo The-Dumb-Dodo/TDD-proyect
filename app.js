@@ -10,8 +10,11 @@ const logger = require('morgan')
 const path = require('path')
 const { sessionConfig, getCurrentUser } = require('./config/session.config')
 
+
 const app = express()
 
+app.use(sessionConfig);
+app.use(getCurrentUser);
 // To have access to `body` property in the request
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -24,9 +27,6 @@ app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(logger('dev'))
-
-app.use(sessionConfig);
-app.use(getCurrentUser);
 
 app.use(cookieParser());
 
