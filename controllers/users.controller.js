@@ -11,17 +11,11 @@ module.exports.create = (req, res, next) => {
     //     ...req.body,
     //     image: req.file.path
     //   }
-    console.log("req body1***",req.body)
     User.create(req.body)
-   
       .then(() => {
-        console.log("***entered in THEN***")
         res.redirect('/')
       })
-    
       .catch(error => {
-        console.log("**Second Body**", req.body)
-        
         console.log("Error details:", error.message, error.errors)
         // Para autorellenar el formulario cuando haya errores, pasamos todos los valores del req.body, menos la password
         const values = {...req.body}
@@ -51,3 +45,6 @@ module.exports.create = (req, res, next) => {
       })
   }
 
+  module.exports.getCurrentUserProfile = (req, res, next) => {
+    res.render('users/profile')
+  }

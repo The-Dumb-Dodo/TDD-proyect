@@ -10,15 +10,13 @@ module.exports.doSignin = (req, res, next) => {
     res.render('auth/signin', { error: 'Email o contraseña incorrectos', email: req.body.email })
   }
 
-  // Busco si hay un usuario con ese email
-  // User.findOne({$or: [ { email: req.body.email }, { username: req.body.email } ]})
+  
   User.findOne({ email: req.body.email })
     .then(user => {
       if (!user) {
         return renderWithErrors()
       }
 
-      // Aqui asumo que si tengo usuario, compruebo las contraseñas
       return user.checkPassword(req.body.password)
         .then(match => {
           if (!match) {
