@@ -20,8 +20,9 @@ module.exports.create = (req, res, next) => {
       })
     
       .catch(error => {
+        console.log("**Second Body**", req.body)
         
-        console.log("***Entered in error****")
+        console.log("Error details:", error.message, error.errors)
         // Para autorellenar el formulario cuando haya errores, pasamos todos los valores del req.body, menos la password
         const values = {...req.body}
         delete values.password

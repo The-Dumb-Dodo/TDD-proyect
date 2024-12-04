@@ -1,7 +1,6 @@
-require ('dotenv').config()
 
 require('dotenv').config()
-
+const cookieParser = require("cookie-parser");
 // Connection to DB
 require('./config/db.config')
 require('./config/hbs.config')
@@ -9,12 +8,13 @@ require('./config/hbs.config')
 const express = require('express')
 const logger = require('morgan')
 const path = require('path')
-// const { sessionConfig, getCurrentUser } = require('./config/session.config')
+const { sessionConfig, getCurrentUser } = require('./config/session.config')
 
 const app = express()
 
 // To have access to `body` property in the request
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Normalizes the path to the views folder
 app.set("views", path.join(__dirname, "views"));
@@ -25,8 +25,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(logger('dev'))
 
-// app.use(sessionConfig);
-// app.use(getCurrentUser);
+app.use(sessionConfig);
+app.use(getCurrentUser);
+
+app.use(cookieParser());
 
 const routes = require('./routes/routes')
 app.use('/', routes)

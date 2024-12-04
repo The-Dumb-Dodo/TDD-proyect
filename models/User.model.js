@@ -29,11 +29,11 @@ const userSchema = new mongoose.Schema(
     type: String,
     default: 'Dodo',
   },
-  island: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Island',
-    unique: true,
-  },
+  // island: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'Island',
+  //   unique: true,
+  // },
   highestScore: {
     type: Number,
     default: 0,
