@@ -7,7 +7,7 @@
 <p><strong>Found in:</strong> {{creature.places}}</p>
 <p><strong>Habitat:</strong> {{creature.habitats}}</p>
 
-<form action="/creature/addToM" method="POST">
+<form action="/creature/addToMyIsland/{{creature._id}}" method="POST">
   <button type="submit">Add to my island</button>
 </form>
 

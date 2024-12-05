@@ -1,5 +1,7 @@
 const Creature = require("../models/Creature.model");
 const mongoose = require("mongoose");
+const Island = require("../models/Island.model");
+
 
 // The creature directory: where you can see all the pokemons
 module.exports.list = (req, res, next) => {
@@ -18,3 +20,13 @@ module.exports.detail = (req, res, next) => {
     })
     .catch((err) => next(err));
 };
+
+module.exports.addToMyIsland = (req, res, next) => {
+  const {id} = req.params;
+  Island.findOneAndUpdate({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) },{ $push: { creatures: id } })
+  .then(
+    res.redirect("/my-island")
+  )
+  .catch((err) => next(err))
+
+}

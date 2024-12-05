@@ -8,24 +8,6 @@ const MONGO_DB_URI = "mongodb://127.0.0.1:27017";
 
 const creatures = require("../data.json");
 
-// mongoose
-//   .connect('mongodb://localhost:27017/TDD', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => {
-//     console.log('Connected to the database');
-//     // Remove all previous creatures and insert the new ones
-//     return Creature.deleteMany()
-//       .then(() => Creature.insertMany(creatures))
-//       .then(() => {
-//         console.log('Seed data inserted');
-//         mongoose.connection.close();
-//       })
-//       .catch(err => console.error('Error inserting seed data: ', err));
-//   })
-//   .catch(err => console.error('Error connecting to database: ', err));
-
 mongoose
   .connect(`${MONGO_DB_URI}/${DB_NAME}`)
   .then(() => {

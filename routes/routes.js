@@ -31,6 +31,7 @@ router.get('/my-island', islandController.myIsland )
 
 router.get("/creature/list", creaturesController.list)
 router.get("/creature/detail/:id", creaturesController.detail)
+router.post("/creature/addToMyIsland/:id", creaturesController.addToMyIsland)
 
 //Users subscribe 
 router.get('/subscribe', isNotAuthenticated, usersController.create)
