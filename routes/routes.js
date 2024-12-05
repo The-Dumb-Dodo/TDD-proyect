@@ -4,20 +4,22 @@ const upload = require('../config/multer.config')
 
 const { isAuthenticated, isNotAuthenticated } = require('../middlewares/auth.middleware')
 
+// miscellaneous controllers
+const miscControllers = require('../controllers/misc.controllers')
 // user controllers
 const usersController = require('../controllers/users.controller')
 const authController = require('../controllers/auth.controller')
 // island controllers
 const islandController = require('../controllers/islands.controller')
+//Creatures controllers
+const creaturesController = require('../controllers/creatures.controller')
 
 //Home 
-router.get('/', (req, res, next) => {
-    res.render('home');
-});
+router.get('/', miscControllers.renderHome);
 
 
 //Play (priority 2)
-
+router.get('/play', miscControllers.renderGame)
 
 //Islands 
 router.get('/island-main', islandController.renderMainIsland )
@@ -26,6 +28,9 @@ router.post('/island-form', islandController.doFormCreate)
 router.get('/my-island', islandController.myIsland )
 
 //Creatures 
+
+router.get("/creature/list", creaturesController.list)
+router.get("/creature/detail/:id", creaturesController.detail)
 
 //Users subscribe 
 router.get('/subscribe', isNotAuthenticated, usersController.create)

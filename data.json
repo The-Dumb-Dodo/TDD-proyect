@@ -1,0 +1,32 @@
+[
+    {
+      "fictionalName": "Flufftail",
+      "commonName": "Fluff Tailed Dragon",
+      "class": "Mammals",
+      "conservationStatus": "CR",
+      "intro": "A rare mythical dragon with soft, fluffy fur.",
+      "places": "Mystic Forest",
+      "habitats": "Mountainous caves",
+      "image": "https://example.com/flufftail.jpg"
+    },
+    {
+      "fictionalName": "Spiketail",
+      "commonName": "Spiked Dragonfish",
+      "class": "Fish",
+      "conservationStatus": "EN",
+      "intro": "A fish with spikes along its back, capable of leaping out of the water.",
+      "places": "Deep ocean trenches",
+      "habitats": "Coral reefs",
+      "image": "https://example.com/spiketail.jpg"
+    },
+    {
+      "fictionalName": "Whisperer",
+      "commonName": "Whispering Ghost",
+      "class": "Amphibians",
+      "conservationStatus": "VU",
+      "intro": "A ghostly amphibian that only appears under the moonlight.",
+      "places": "Spooky swamps",
+      "habitats": "Foggy marshes",
+      "image": "https://example.com/whisperer.jpg"
+    }
+  ]
