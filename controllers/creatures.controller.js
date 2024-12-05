@@ -23,10 +23,22 @@ module.exports.detail = (req, res, next) => {
 
 module.exports.addToMyIsland = (req, res, next) => {
   const {id} = req.params;
-  Island.findOneAndUpdate({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) },{ $push: { creatures: id } })
-  .then(
-    res.redirect("/my-island")
+  Island.findOneAndUpdate({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) },{ $addToSet: { Creature.findById(id) } },{ new: true })
+  .then((updatedIsland)=>{
+    if (updatedIsland) {
+      console.log("Creature added or already exists in the island"),
+      res.redirect("/my-island")
+    } else {
+      console.log("Island not found or some issue occurred");
+    }
+  }
+    
   )
-  .catch((err) => next(err))
+  .catch((err) => {
+
+    console.log("went inside error***"),
+    next(err)
+  })
+    
 
 }

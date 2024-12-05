@@ -1,25 +1,20 @@
 const mongoose = require("mongoose");
 const Island = require("../models/Island.model");
+const Creature = require("../models/Creature.model");
 
 module.exports.renderMainIsland = (req, res, next) => {
   Island.findOne({ guardian: req.currentUser.id })
-  .then((island) => {
-    if (island) {
-      res.redirect("/my-island", {island});
-    } else {
-      res.redirect("/island-form");
-    }
-  })
-  .catch((error) => {
-    res;
-    next(error);
-  });
-  
-  
+    .then((island) => {
+      res.render("island/main", { island });
+    })
+    .catch((error) => {
+      res;
+      next(error);
+    });
 };
 
 module.exports.formCreate = (req, res, next) => {
- res.render("island/form")
+  res.render("island/form");
 };
 module.exports.doFormCreate = (req, res, next) => {
   req.body.guardian = req.currentUser.id;
@@ -52,13 +47,19 @@ module.exports.doFormCreate = (req, res, next) => {
 module.exports.myIsland = (req, res, next) => {
   Island.findOne({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) })
     .then((island) => {
-      //console.log("Island creatures-->:",island.creatures)
-      // const creaturesArray = [];
-      // island.creatures.forEach((creatureId)=>{
-      //   creaturesArray.push(Creature.findOne(creatureId))
-      // })
-      // console.log("**Island creature IN ARRAY-->:",creaturesArray[0])
-      res.render("island/my-island");
+      console.log("Island creatures-->:", island.creatures);
+      const creaturesArray = [];
+      island.creatures.forEach((creatureId) => {
+        Creature.findOne(creatureId)
+        .then((creature) => {
+          creaturesArray.push(creature);
+        })
+        .catch((error) => {
+          next(error)
+        })
+      });
+      console.log("**Island creature IN ARRAY-->:", creaturesArray);
+      res.render("island/my-island", { island, creatures: creaturesArray });
     })
     .catch((error) => {
       next(error);

@@ -1,7 +1,7 @@
 
 
 
-<h1>Welcpome to {{island.name}}</h1>
+<h1>Welcome to {{island.name}}</h1>
 
 <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
@@ -16,6 +16,8 @@
 <div class="card my-3" style="width: 18rem;">
     Creatures:
     <ul>
-        <li></li>
+  {{#each creatures as |creature|}}
+  <li>{{creature.commonName}}</li>
+  {{/each}}
     </ul>
 </div>
