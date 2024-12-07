@@ -26,6 +26,8 @@ router.get('/island-main', islandController.renderMainIsland )
 router.get('/island-form', islandController.formCreate)
 router.post('/island-form', islandController.doFormCreate)
 router.get('/my-island', islandController.myIsland )
+router.get("/my-island/:id/edit",islandController.editMyIsland)
+router.post("/my-island/:id/edit",islandController.doEditMyIsland)
 
 //Creatures 
 
