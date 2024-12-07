@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const User = require('../models/User.model')
+const Island = require('../models/Island.model')
 
 module.exports.create = (req, res, next) => {
     res.render('users/subscribe')
@@ -46,5 +47,10 @@ module.exports.create = (req, res, next) => {
   }
 
   module.exports.getCurrentUserProfile = (req, res, next) => {
-    res.render('users/profile')
+    Island.findOne({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) })
+    .then((island)=>{
+      console.log("**THE ISLAND*", island)
+      res.render('users/profile', {island})
+    })
+    .catch((error) => next(error))
   }
