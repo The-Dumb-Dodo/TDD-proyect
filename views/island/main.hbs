@@ -1,5 +1,10 @@
 <h1>Here is the island page</h1>
-{{#if island}}
+<ul>
+{{#each islands as |island|}}
+    <li>{{island.name}}</li>
+{{/each}}
+</ul>
+{{#if myIsland}}
 <a href="/my-island" class="btn btn-primary">Check my island</a>
 {{else}}
 <a href="/island-form" class="btn btn-primary">Create my island</a>

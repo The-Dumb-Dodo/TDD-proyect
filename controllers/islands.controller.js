@@ -3,9 +3,21 @@ const Island = require("../models/Island.model");
 const Creature = require("../models/Creature.model");
 
 module.exports.renderMainIsland = (req, res, next) => {
-  Island.findOne({ guardian: req.currentUser.id })
-    .then((island) => {
-      res.render("island/main", { island });
+  let islandPromises = [
+    Island.find(),
+    Island.findOne({ guardian: req.currentUser._id }),
+  ];
+
+  Island.find()
+    .then((islands) => {
+      Island.findOne({ guardian: req.currentUser._id })
+        .then((myIsland) => {
+          res.render("island/main", { islands, myIsland });
+        })
+        .catch((error) => {
+          res;
+          next(error);
+        });
     })
     .catch((error) => {
       res;
@@ -70,17 +82,17 @@ module.exports.editMyIsland = (req, res, next) => {
   Island.findOne({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) })
     .then((island) => {
       res.render("island/edit-my-island", { island });
-
     })
     .catch((error) => {
       next(error);
     });
-
 };
 
-module.exports.doEditMyIsland = (req, res , next) => {
-  Island.findOneAndUpdate({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) },req.body)
-    .then (()=>{
-      res.redirect("/my-island")
-    })
-}
+module.exports.doEditMyIsland = (req, res, next) => {
+  Island.findOneAndUpdate(
+    { guardian: new mongoose.Types.ObjectId(req.currentUser.id) },
+    req.body
+  ).then(() => {
+    res.redirect("/my-island");
+  });
+};
