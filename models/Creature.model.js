@@ -35,4 +35,5 @@ const creatureSchema = new mongoose.Schema({
   }, // URL to character image
 });
 
-module.exports = mongoose.model('Creature', creatureSchema);
+const Creature = mongoose.model('Creature', creatureSchema);
+module.exports = Creature;
