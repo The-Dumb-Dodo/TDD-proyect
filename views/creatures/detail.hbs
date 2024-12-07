@@ -1,0 +1,14 @@
+<h1>{{creature.commonName}} - {{creature.fictionalName}}</h1>
+
+<img src="{{creature.image}}" alt="{{creature.commonName}}" width="200" />
+<p><strong>Class:</strong> {{creature.class}}</p>
+<p><strong>Conservation Status:</strong> {{creature.conservationStatus}}</p>
+<p><strong>Intro:</strong> {{creature.intro}}</p>
+<p><strong>Found in:</strong> {{creature.places}}</p>
+<p><strong>Habitat:</strong> {{creature.habitats}}</p>
+
+<form action="/creature/addToM" method="POST">
+  <button type="submit">Add to my island</button>
+</form>
+
+<a href="/creature/list">Back to list</a>

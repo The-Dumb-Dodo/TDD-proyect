@@ -70,6 +70,7 @@ module.exports.editMyIsland = (req, res, next) => {
   Island.findOne({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) })
     .then((island) => {
       res.render("island/edit-my-island", { island });
+
     })
     .catch((error) => {
       next(error);
