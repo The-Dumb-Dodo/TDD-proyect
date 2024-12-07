@@ -1,32 +1,62 @@
 [
-    {
-      "fictionalName": "Flufftail",
-      "commonName": "Fluff Tailed Dragon",
-      "class": "Mammals",
-      "conservationStatus": "CR",
-      "intro": "A rare mythical dragon with soft, fluffy fur.",
-      "places": "Mystic Forest",
-      "habitats": "Mountainous caves",
-      "image": "https://example.com/flufftail.jpg"
-    },
-    {
-      "fictionalName": "Spiketail",
-      "commonName": "Spiked Dragonfish",
-      "class": "Fish",
-      "conservationStatus": "EN",
-      "intro": "A fish with spikes along its back, capable of leaping out of the water.",
-      "places": "Deep ocean trenches",
-      "habitats": "Coral reefs",
-      "image": "https://example.com/spiketail.jpg"
-    },
-    {
-      "fictionalName": "Whisperer",
-      "commonName": "Whispering Ghost",
-      "class": "Amphibians",
-      "conservationStatus": "VU",
-      "intro": "A ghostly amphibian that only appears under the moonlight.",
-      "places": "Spooky swamps",
-      "habitats": "Foggy marshes",
-      "image": "https://example.com/whisperer.jpg"
-    }
-  ]
+  {
+    "fictionalName": "Wave Rider",
+    "commonName": "Loggerhead Sea Turtle",
+    "class": "Reptiles",
+    "conservationStatus": "EN",
+    "intro": "A chill ocean traveler that rides the waves like a pro, spreading conservation vibes wherever it swims.",
+    "places": "Coastal waters",
+    "habitats": "Sea beds and sandy beaches",
+    "image": "https://www.joelsartore.com/wp-content/uploads/stock/ESA002/ESA002-00391-1920x1276.jpg"
+  },
+  {
+    "fictionalName": "Shadow Hunter",
+    "commonName": "Iberian Lynx",
+    "class": "Mammals",
+    "conservationStatus": "EN",
+    "intro": "The stealthy big cat with a fur coat that screams style and a leap that leaves you in awe.",
+    "places": "Iberian Peninsula",
+    "habitats": "Shrublands and open forests",
+    "image": "https://www.joelsartore.com/wp-content/uploads/stock/ANI019/ANI019-00464.jpg"
+  },
+  {
+    "fictionalName": "Leaf Dancer",
+    "commonName": "Kakapo",
+    "class": "Birds",
+    "conservationStatus": "CR",
+    "intro": "A nocturnal parrot that grooves like no other on forest floors with its quirky waddle.",
+    "places": "New Zealand forests",
+    "habitats": "Dense woodlands",
+    "image": "https://www.joelsartore.com/wp-content/uploads/stock/BIR037/BIR037-00544.jpg"
+  },
+  {
+    "fictionalName": "Ocean Whisperer",
+    "commonName": "Vaquita",
+    "class": "Mammals",
+    "conservationStatus": "CR",
+    "intro": "The elusive and charming porpoise, known as the 'panda of the sea,' whispering its tale of survival.",
+    "places": "Northern Gulf of California",
+    "habitats": "Shallow coastal waters",
+    "image": "https://files.worldwildlife.org/wwfcmsprod/images/Vaquita_1_Thomas_A_Jefferson_20081019.jpg/story_full_width/8pc3684jv6_Vaquita_1_Thomas_A_Jefferson_20081019.jpg"
+  },
+  {
+    "fictionalName": "Sand Stomper",
+    "commonName": "African Desert Elephant",
+    "class": "Mammals",
+    "conservationStatus": "VU",
+    "intro": "The gentle giant that stomps through the desert with grace, keeping ecosystems in check.",
+    "places": "African savannahs and deserts",
+    "habitats": "Arid plains and grasslands",
+    "image": "https://i.ytimg.com/vi/bEtVuzYngh8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAD7rbnhVBjCbZzpxrx5c5Q_druGg"
+  },
+  {
+    "fictionalName": "Midnight Glider",
+    "commonName": "Black Lemur",
+    "class": "Mammals",
+    "conservationStatus": "EN",
+    "intro": "A tree-hopping ninja with dazzling golden eyes that light up the night.",
+    "places": "Madagascar",
+    "habitats": "Tropical forests",
+    "image": "https://www.joelsartore.com/wp-content/uploads/stock/ANI042/ANI042-00044.jpg"
+  }
+]

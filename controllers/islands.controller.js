@@ -48,18 +48,17 @@ module.exports.myIsland = (req, res, next) => {
   Island.findOne({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) })
     .then((island) => {
       console.log("Island creatures-->:", island.creatures);
-      const creaturesArray = [];
-      island.creatures.forEach((creatureId) => {
-        Creature.findOne(creatureId)
-        .then((creature) => {
-          creaturesArray.push(creature);
-        })
-        .catch((error) => {
-          next(error)
-        })
+      const creaturesPromisesArray = island.creatures.map((creatureId)=> Creature.findById(creatureId));
+    
+      Promise.all(creaturesPromisesArray)
+      .then((creaturesArray) =>{
+        console.log("**Island creature IN ARRAY-->:", creaturesArray);
+        res.render("island/my-island", { island, creatures: creaturesArray });
+
+      })
+      .catch((error) => {
+        next(error);
       });
-      console.log("**Island creature IN ARRAY-->:", creaturesArray);
-      res.render("island/my-island", { island, creatures: creaturesArray });
     })
     .catch((error) => {
       next(error);
