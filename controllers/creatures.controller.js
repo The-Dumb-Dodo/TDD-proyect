@@ -23,7 +23,7 @@ module.exports.detail = (req, res, next) => {
 
 module.exports.addToMyIsland = (req, res, next) => {
   const {id} = req.params;
-  Island.findOneAndUpdate({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) },{ $addToSet: { Creature.findById(id) } },{ new: true })
+  Island.findOneAndUpdate({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) },{ $addToSet: { creatures: id } },{ new: true })
   .then((updatedIsland)=>{
     if (updatedIsland) {
       console.log("Creature added or already exists in the island"),
