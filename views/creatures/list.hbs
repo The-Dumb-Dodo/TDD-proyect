@@ -1,16 +1,16 @@
 <h1>You should be able to see cool creatures here</h1>
 
-<ul>
-  {{#each creatures}}
-    <li>
-      <h3>{{this.commonName}}</h3>
-      <img src="{{this.image}}" alt="{{this.commonName}}" width="100" />
-      <p>{{this.fictionalName}}
-        -
-        {{this.class}}
-        -
-        {{this.conservationStatus}}</p>
-      <a href="/creature/detail/{{this._id}}">See details</a>
-    </li>
-  {{/each}}
-</ul>
+<div class="row row-cols-1 row-cols-md-3 g-4 my-3">
+{{#each creatures}}
+  <div class="col">
+    <div class="card">
+      <img src="{{this.image}}" style="height: 400px; object-fit: cover;" class="card-img-top" alt="{{this.commonName}}">
+      <div class="card-body">
+        <h5 class="card-title">{{this.fictionalName}}</h5>
+        <p class="card-text">{{this.commonName}}-{{this.class}}-{{this.conservationStatus}}</p>
+      </div>
+    </div>
+  </div>
+ {{/each}}
+ 
+</div>

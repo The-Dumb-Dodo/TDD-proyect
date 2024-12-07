@@ -9,17 +9,25 @@
     <h5 class="card-title">Guardian:{{currentUser.username}}</h5>
     <h5 class="card-title">Theme:{{island.theme}}</h5>
     <p class="card-text"></p>
-    <a href="#" class="btn btn-light">Visit other islands!</a>
+
+    <a href="#" class="btn btn-secondary">Visit other islands!</a>
+
+
+
   </div>
 </div>
 
 <div class="card my-3" style="width: 18rem;">
+  <div class="card-body">
     Creatures:
     <ul>
   {{#each creatures as |creature|}}
-  <li>{{creature.commonName}}</li>
+  <li>{{creature.commonName}} </li>
   {{/each}}
     </ul>
+  <a href="#" class="btn btn-secondary">Edit my creatures!</a>
+
+  </div>
 </div>
 
 <a href="/my-island/{{currentUser.id}}/edit" class="btn btn-primary">Edit my island</a>

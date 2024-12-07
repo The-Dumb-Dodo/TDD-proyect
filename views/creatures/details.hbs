@@ -1,0 +1,38 @@
+
+{{!-- <h1>{{creature.commonName}} - {{creature.fictionalName}}</h1>
+
+<img src="{{creature.image}}" alt="{{creature.commonName}}" width="200" />
+<p><strong>Class:</strong> {{creature.class}}</p>
+<p><strong>Conservation Status:</strong> {{creature.conservationStatus}}</p>
+<p><strong>Intro:</strong> {{creature.intro}}</p>
+<p><strong>Found in:</strong> {{creature.places}}</p>
+<p><strong>Habitat:</strong> {{creature.habitats}}</p>
+
+<form action="/creature/addToMyIsland/{{creature._id}}" method="POST">
+  <button type="submit">Add to my island</button>
+</form>
+
+<a href="/creature/list">Back to list</a> --}}
+
+<div class="card" style="width: 18rem;">
+  <img
+    src="{{creature.image}}"
+    class="card-img-top"
+    alt="{{creature.commonName}}"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{creature.fictionalName}}</h5>
+    <p><strong>Common Name:</strong> {{creature.commonName}}</p>
+    <p><strong>Class:</strong> {{creature.class}}</p>
+    <p><strong>Conservation Status:</strong> {{creature.conservationStatus}}</p>
+    <p><strong>Intro:</strong> {{creature.intro}}</p>
+    <p><strong>Found in:</strong> {{creature.places}}</p>
+    <p><strong>Habitat:</strong> {{creature.habitats}}</p>
+    
+  <form action="/creature/addToMyIsland/{{creature._id}}" method="POST">
+    <button class="btn btn-primary" type="submit">Add to my island</button>
+  </form>
+  <a class="btn btn-secondary my-3" href="/creature/list">Back to list</a>
+  </div>
+</div>
+
