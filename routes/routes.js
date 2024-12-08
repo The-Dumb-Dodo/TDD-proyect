@@ -17,6 +17,9 @@ const creaturesController = require('../controllers/creatures.controller')
 //Home 
 router.get('/', miscControllers.renderHome);
 
+// Welcome
+router.get('/welcome', miscControllers.welcome)
+
 
 //Play (priority 2)
 router.get('/play', miscControllers.renderGame)

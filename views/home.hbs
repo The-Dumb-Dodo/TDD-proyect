@@ -6,15 +6,18 @@
 <main>
   <div class="container">
     <div class="row">
+      {{#if currentUser}}
       <div class="col-md-4">
-        <button class="btn btn-info btn-lg">Play Now</button>
+        <a href="/island-main" class="btn btn-info btn-lg">Check All Islands</a>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-info btn-lg">Check All Islands</button>
+        <a href="/creature/list" class="btn btn-info btn-lg">See Creatures</a>
       </div>
+      {{else}}
       <div class="col-md-4">
-        <button class="btn btn-info btn-lg">See Creatures</button>
+        <a href="/play" class="btn btn-info btn-lg">Play Now</a>
       </div>
+      {{/if}}
     </div>
   </div>
 

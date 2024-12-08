@@ -14,7 +14,7 @@ module.exports.create = (req, res, next) => {
     //   }
     User.create(req.body)
       .then(() => {
-        res.redirect('/')
+        res.redirect('/welcome')
       })
       .catch(error => {
         console.log("Error details:", error.message, error.errors)
