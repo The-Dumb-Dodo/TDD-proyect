@@ -34,6 +34,8 @@ router.post("/my-island/:id/edit",islandController.doEditMyIsland)
 router.get("/creature/list", creaturesController.list)
 router.get("/creature/detail/:id", creaturesController.detail)
 router.post("/creature/addToMyIsland/:id", creaturesController.addToMyIsland)
+router.get('/creature/edit-my', creaturesController.editMyCreatures )
+router.post('/creature/edit-my', creaturesController.doEditMyCreatures )
 
 //Users subscribe 
 router.get('/subscribe', isNotAuthenticated, usersController.create)

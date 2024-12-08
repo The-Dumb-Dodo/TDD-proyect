@@ -42,3 +42,29 @@ module.exports.addToMyIsland = (req, res, next) => {
     
 
 }
+
+module.exports.editMyCreatures = (req, res , next) => {
+
+  Island.findOne({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) })
+  .then((island) => {
+    const creaturesPromisesArray = island.creatures.map((creatureId) =>
+      Creature.findById(creatureId)
+    );
+
+    Promise.all(creaturesPromisesArray)
+      .then((creaturesArray) => {
+        res.render("creatures/edit-my-creatures", { creatures: creaturesArray });
+      })
+      .catch((error) => {
+        next(error);
+      });
+  })
+  .catch((error) => {
+    next(error);
+  });
+  
+}
+
+module.exports.doEditMyCreatures = (req, res , next) => {
+  
+}
