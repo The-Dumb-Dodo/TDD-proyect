@@ -29,11 +29,6 @@ const userSchema = new mongoose.Schema(
     type: String,
     default: 'Dodo',
   },
-  // island: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'Island',
-  //   unique: true,
-  // },
   highestScore: {
     type: Number,
     default: 0,
@@ -62,7 +57,6 @@ const userSchema = new mongoose.Schema(
   };
   
   const User = mongoose.model('User', userSchema);
-  
   module.exports = User;
 
 
