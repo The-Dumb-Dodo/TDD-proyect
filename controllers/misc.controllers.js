@@ -4,6 +4,7 @@ module.exports.renderHome = (req, res, next) => {
 
 module.exports.renderGame = (req, res, next) => {
     res.render('play');
+    
 }
 
 module.exports.welcome = (req, res ,next) => {
