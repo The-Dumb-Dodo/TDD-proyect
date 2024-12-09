@@ -18,7 +18,7 @@
         <div class="card-body">
           <h5 class="card-title">Email</h5>
           <p class="card-text">{{currentUser.email}}</p>
-          <button class="btn btn-warning">Edit Email</button>
+          
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
         <div class="card-body">
           <h5 class="card-title">Password</h5>
           <p class="card-text">●●●●●●●●</p>
-          <button class="btn btn-warning">Change Password</button>
+         
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@
         <div class="card-body">
           <h5 class="card-title">Favorite Animal</h5>
           <p class="card-text">{{currentUser.favoriteAnimal}}</p>
-          <button class="btn btn-warning">Edit Favorite Animal</button>
+          
         </div>
       </div>
     </div>
@@ -71,14 +71,17 @@
               Create your own Dodo island today!
             {{/if}}
           </p>
-          <button class="btn btn-warning">Edit Island</button>
+          
         </div>
       </div>
     </div>
 
     <!-- Edit Profile Button -->
-    <div class="col-md-6 mb-3">
-          <button class="btn btn-info">Edit Profile</button>
+    <div class="row">
+      <div class="d-flex align-items-center justify-content-center">
+
+          <a href="/profile-edit" class="btn btn-info btn-lg">Edit Profile</a>
+      </div>
     </div>
   </div>
 </div>

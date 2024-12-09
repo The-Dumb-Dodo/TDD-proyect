@@ -50,8 +50,21 @@ module.exports.create = (req, res, next) => {
   module.exports.getCurrentUserProfile = (req, res, next) => {
     Island.findOne({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) })
     .then((island)=>{
-      console.log("**THE ISLAND*", island)
       res.render('users/profile', {island})
     })
     .catch((error) => next(error))
+  }
+
+  module.exports.editProfile = (req, res , next) => {
+    res.render("users/profile-form")
+  }
+
+  module.exports.doEditProfile = (req,res,next)=>{
+    User.findOneAndUpdate({_id: req.currentUser.id },
+    req.body)
+    .then(()=>{
+        res.redirect('/profile')
+      })
+      .catch((error) => next(error))
+      
   }

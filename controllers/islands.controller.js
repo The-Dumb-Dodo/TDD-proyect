@@ -117,17 +117,22 @@ module.exports.doEditMyIsland = (req, res, next) => {
     req.body
   ).then(() => {
     res.redirect("/my-island");
+  })
+  .catch((error) => {
+    next(error);
   });
 };
 
 module.exports.exploreIsland = (req, res, next) => {
   const {id} = req.params
-
+// undesrtand how to incorporate the guardina here, so we dont render the name of the current user
   Island.findById(id)
     .then((island)=>{
       console.log("Island creatures-->:", island.creatures);
       const creaturesPromisesArray = island.creatures.map((creatureId) =>
         Creature.findById(creatureId)
+
+      
     );
 
     Promise.all(creaturesPromisesArray)
