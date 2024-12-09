@@ -16,6 +16,7 @@ module.exports.create = (req, res, next) => {
       .then(() => {
         res.redirect('/welcome')
       })
+      
       .catch(error => {
         console.log("Error details:", error.message, error.errors)
         // Para autorellenar el formulario cuando haya errores, pasamos todos los valores del req.body, menos la password

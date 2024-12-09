@@ -1,6 +1,25 @@
 const mongoose = require("mongoose");
 const Island = require("../models/Island.model");
 const Creature = require("../models/Creature.model");
+//const { search } = require("../routes/routes");
+
+module.exports.getIslands = (req, res, next) => {
+  const {q: searchTerm} = req.query
+  const regex = new RegExp(searchTerm, 'i')
+
+  const searchFilter = {
+    $or: [
+      {name: {$regex: regex}},
+      {theme: {$regex: regex}}
+    ]
+  }
+
+  Island.find(searchFilter)
+    .then((islands)=>{
+      res.render('island/main', {islands})
+    })
+    .catch((error)=>console.error(error))
+}
 
 module.exports.renderMainIsland = (req, res, next) => {
   let islandPromises = [

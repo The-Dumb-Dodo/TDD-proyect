@@ -3,12 +3,14 @@
 
   <div class="w-50">
     <div class="col-md-6 offset-md-3">
-      <form class="d-flex">
+      <form class="d-flex" action="/island-search" method="GET" >
         <input
           class="form-control me-2"
           type="search"
           placeholder="Search"
           aria-label="Search"
+          name="q" 
+          id="search"
         />
         <button class="btn btn-outline-primary" type="submit">Search</button>
       </form>

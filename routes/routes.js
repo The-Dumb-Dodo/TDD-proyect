@@ -18,13 +18,14 @@ const creaturesController = require('../controllers/creatures.controller')
 router.get('/', miscControllers.renderHome);
 
 // Welcome
-router.get('/welcome', miscControllers.welcome)
+router.get('/welcome', miscControllers.welcome);
 
 
 //Play (priority 2)
 router.get('/play', miscControllers.renderGame)
 
 //Islands 
+router.get('/island-search', islandController.getIslands)
 router.get('/island-main', islandController.renderMainIsland )
 router.get('/island-form', islandController.formCreate)
 router.post('/island-form', islandController.doFormCreate)

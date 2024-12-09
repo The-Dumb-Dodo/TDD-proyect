@@ -1,8 +1,8 @@
 TOP PRIORITY: GO EAATTTATTTATATATT
 
 
-1) add page with felicitacion message and redirect buttons to : home and sign in now to explore more 
-2) change island-main display and then redirect to all islands
+1) DONE add page with felicitacion message and redirect buttons to : home and sign in now to explore more 
+2) DONE change island-main display and then redirect to all islands
 3) search bar logic to filter islands 
 4) In my siland redirect to creatures (add creatures button ) if they dont have any added
 5) Edit profile form 
