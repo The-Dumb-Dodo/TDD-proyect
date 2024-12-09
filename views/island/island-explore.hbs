@@ -1,7 +1,6 @@
+{{!-- // undesrtand how to incorporate the guardina here, so we dont render the name of the current user --}}
 
-
-
-<h1>Welcome to {{island.name}}</h1>
+<h1>Welcome to {{island.name}} island </h1>
 
 <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
@@ -26,12 +25,11 @@
   <li>{{creature.commonName}} </li>
   {{/each}}
     </ul>
-  <a href="/creature/edit-my" class="btn btn-secondary">Edit my creatures!</a>
+  <a href="/creature/edit-my" class="btn btn-secondary">Explore the creatures</a>
   {{else}}
-  <a href="/creature/list" class="btn btn-secondary">Add some creatures!</a>
+  <a href="/creature/list" class="btn btn-secondary">Soon there will be some creatures</a>
   {{/if}}
 
   </div>
 </div>
 
-<a href="/my-island/{{currentUser.id}}/edit" class="btn btn-primary">Edit my island</a>

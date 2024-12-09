@@ -4,22 +4,19 @@ const Creature = require("../models/Creature.model");
 //const { search } = require("../routes/routes");
 
 module.exports.getIslands = (req, res, next) => {
-  const {q: searchTerm} = req.query
-  const regex = new RegExp(searchTerm, 'i')
+  const { q: searchTerm } = req.query;
+  const regex = new RegExp(searchTerm, "i");
 
   const searchFilter = {
-    $or: [
-      {name: {$regex: regex}},
-      {theme: {$regex: regex}}
-    ]
-  }
+    $or: [{ name: { $regex: regex } }, { theme: { $regex: regex } }],
+  };
 
   Island.find(searchFilter)
-    .then((islands)=>{
-      res.render('island/main', {islands})
+    .then((islands) => {
+      res.render("island/main", { islands });
     })
-    .catch((error)=>console.error(error))
-}
+    .catch((error) => console.error(error));
+};
 
 module.exports.renderMainIsland = (req, res, next) => {
   let islandPromises = [
@@ -86,7 +83,14 @@ module.exports.myIsland = (req, res, next) => {
       Promise.all(creaturesPromisesArray)
         .then((creaturesArray) => {
           console.log("**Island creature IN ARRAY-->:", creaturesArray);
-          res.render("island/my-island", { island, creatures: creaturesArray });
+          if (creaturesArray.length === 0) {
+            res.render("island/my-island", {island});
+          } else {
+            res.render("island/my-island", {
+              island,
+              creatures: creaturesArray,
+            });
+          }
         })
         .catch((error) => {
           next(error);
@@ -115,3 +119,35 @@ module.exports.doEditMyIsland = (req, res, next) => {
     res.redirect("/my-island");
   });
 };
+
+module.exports.exploreIsland = (req, res, next) => {
+  const {id} = req.params
+
+  Island.findById(id)
+    .then((island)=>{
+      console.log("Island creatures-->:", island.creatures);
+      const creaturesPromisesArray = island.creatures.map((creatureId) =>
+        Creature.findById(creatureId)
+    );
+
+    Promise.all(creaturesPromisesArray)
+      .then((creaturesArray) => {
+        console.log("**Island creature IN ARRAY-->:", creaturesArray);
+        if (creaturesArray.length === 0) {
+          res.render("island/island-explore", {island});
+        } else {
+          res.render("island/island-explore", {
+            island,
+            creatures: creaturesArray,
+          });
+        }
+      })
+      .catch((error) => {
+        next(error);
+      });
+    })
+    .catch((error) => {
+      next(error)
+    });
+}
+

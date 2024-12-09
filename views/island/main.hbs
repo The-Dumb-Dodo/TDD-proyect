@@ -18,7 +18,7 @@
 
   </div>
 </div>
-<div class="d-flex flex-column align-items-center my-4 min-vh-100  ">
+<div class="d-flex flex-column align-items-center my-4 min-vh-40 ">
   <div class="container-fluid">
     <div class="row g-0">
       <div class="col-md-6 d-flex align-items-center">
@@ -29,17 +29,11 @@
             finibus sapien. Pellentesque nec accumsan eros, a rutrum justo.
             Curabitur id nulla lacinia erat hendrerit molestie tristique ut
             tortor. Sed rutrum metus eget purus rhoncus mattis. Donec cursus
-            tincidunt augue at eleifend. Suspendisse fringilla pellentesque
-            porttitor. Ut sed hendrerit leo. Mauris non elit eu lacus pretium
-            ultrices. Ut sit amet lacus sit amet dui bibendum finibus sit amet
-            blandit nulla. Cras luctus sollicitudin sapien, a blandit est porta
-            at. Sed porttitor sodales feugiat. Sed non lorem interdum, suscipit
-            nulla at, laoreet velit. Quisque urna lorem, aliquet quis venenatis
-            eget, rhoncus quis orci.</p>
+            tincidunt augue at eleifend. </p>
 
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-3 container-fluid">
         <img
           src="https://via.placeholder.com/600x400"
           class="img-fluid"
@@ -55,20 +49,20 @@
     {{#if myIsland}}
       <a href="/my-island" class="btn btn-primary">Check my island</a>
     {{else}}
-      <a href="/island-form" class="btn btn-light">Create my island</a>
+      <a href="/island-form" class="btn btn-success">Create my island</a>
     {{/if}}
   </div>
-  <div class="d-flex align-items-center flex-column my-3 mb-3">
+  <div class="d-flex align-items-center flex-column  mb-3">
 
   <h2>Scroll down to see more</h2>
-  <div class="arrow mb-5">
+  <div class="arrow ">
     &#8595;
     <!-- Down arrow symbol -->
   </div>
   </div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-4 g-4 min-vh-100 my-3 ">
+<div class="row row-cols-1 row-cols-md-4 g-4 min-vh-100  ">
   {{#each islands as |island|}}
     <div class="col">
       <div class="card">
@@ -76,7 +70,7 @@
         <div class="card-body">
           <h5 class="card-title">{{island.name}}</h5>
           <p class="card-text">{{island.theme}}</p>
-          <a href="#" class="btn btn-secondary">Check this island</a>
+          <a href="/island-explore/{{island.id}}" class="btn btn-secondary">Check this island</a>
         </div>
       </div>
     </div>
