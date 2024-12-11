@@ -5,6 +5,8 @@ const cookieParser = require("cookie-parser");
 require('./config/db.config')
 require('./config/hbs.config')
 
+const cors = require('cors')
+
 const express = require('express')
 const logger = require('morgan')
 const path = require('path')
@@ -13,6 +15,7 @@ const { sessionConfig, getCurrentUser } = require('./config/session.config')
 
 const app = express()
 
+app.use(cors())
 app.use(sessionConfig);
 app.use(getCurrentUser);
 // To have access to `body` property in the request
