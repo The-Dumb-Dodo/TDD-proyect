@@ -75,14 +75,12 @@ module.exports.doFormCreate = (req, res, next) => {
 module.exports.myIsland = (req, res, next) => {
   Island.findOne({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) })
     .then((island) => {
-      console.log("Island creatures-->:", island.creatures);
       const creaturesPromisesArray = island.creatures.map((creatureId) =>
         Creature.findById(creatureId)
       );
 
       Promise.all(creaturesPromisesArray)
         .then((creaturesArray) => {
-          console.log("**Island creature IN ARRAY-->:", creaturesArray);
           if (creaturesArray.length === 0) {
             res.render("island/my-island", {island});
           } else {
