@@ -23,10 +23,7 @@ router.get('/welcome', miscControllers.welcome);
 
 //Play (priority 2)
 router.get('/play', miscControllers.renderGame)
-router.post('/savepoints', (req, res, next) => {
-    res.render('home')
-})
-
+router.post('/savepoints', miscControllers.endGame)
 
 //Islands 
 router.get('/island-search', islandController.getIslands)
