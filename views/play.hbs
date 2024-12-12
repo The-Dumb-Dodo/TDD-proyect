@@ -1,3 +1,109 @@
-<h1>here will be the game</h1>
+{{!-- <iframe  src="http://127.0.0.1:4403/index.html" width="900px" height="900px"/>
 
-<iframe src="https://vladys00.github.io/project1-github-repo/" width="1100px" height="900px"/>
+ --}}
+
+
+
+<head>
+     <link rel="stylesheet" href="/game-TDD/assets/css/styles.css" />
+</head>
+    <div class="container">
+      <div id="counter">
+        <h2>Points:</h2>
+        <p id="counter-num">0</p>
+      </div>
+      <div id="game-board"></div>
+      <div id="game-over">
+        <p>You scored: <span id="finalScore">0</span> points</p>
+        <h1>GAME OVER!!</h1>
+        <button id="play-again">Play Again</button>
+      </div>
+
+      <div id="questionBox">
+        <img id="img-div" alt="question image" />
+        <!-- in the src we put a varibale  -->
+        <form id="form">
+          <p>Choose the correct answer:</p>
+          <label>
+            <select name="answer" id="answer">
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+            </select>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div id="correct-answer">
+      <p>Correct answer!!</p>
+    </div>
+    <div id="incorrect-answer">
+      <p>Incorrect answer :(</p>
+    </div>
+    <div id="game-description">
+        <div class="parragraph">
+
+            <p>
+                Somewhere in the 1600s… Hello, my fellow dodo! Welcome back to our home, the island of Mauritius! It is so absolutely beautifull here, I know you cannot wait to start exploring, but before read the followings:
+            </p>
+            <img
+                src="/game-TDD/assets/img/keys.png"
+                alt="keys img"
+              />
+        </div>
+      <div>
+        <div class="descriptions">
+          <ul>
+            <h2>Avoid your enemies</h2>
+            <li><img src="/game-TDD/assets/img/pig.gif" alt="crab gif" /></li>
+            <li><img src="/game-TDD/assets/img/rat.gif" alt="rat gif" /></li>
+            <li><img src="/game-TDD/assets/img/pirate.gif" alt="pirate gif" /></li>
+          </ul>
+        </div>
+        <div class="descriptions">
+          <ul>
+            <h2>Get some poits with</h2>
+            <li><img src="/game-TDD/assets/img/nut.png" alt="nut image" /></li>
+            <li><img src="/game-TDD/assets/img/rock2.png" alt="rock image" /></li>
+          </ul>
+        </div>
+        <div class="descriptions">
+          <ul>
+            <h2>And some magic with</h2>
+            <li><img src="/game-TDD/assets/img/crab.gif" alt="crab gif" /></li>
+            <li><img src="/game-TDD/assets/img/snail.gif" alt="snail gif" /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button id="start-btn">Start Game!</button>
+    
+    
+    <script src="/game-TDD/assets/js/models/questions/dataQuestions.js"></script>
+    <script src="/game-TDD/assets/js/constant.js"></script>
+    <script src="/game-TDD/assets/js/models/game.js"></script>
+    <script src="/game-TDD/assets/js/models/background.js"></script>
+    <script src="/game-TDD/assets/js/models/enemies/enemy.js"></script>
+    <script src="/game-TDD/assets/js/models/enemies/enemyRat.js"></script>
+    <script src="/game-TDD/assets/js/models/enemies/enemyPig.js"></script>
+    <script src="/game-TDD/assets/js/models/slowSnail.js"></script>
+    <script src="/game-TDD/assets/js/models/powerCrab.js"></script>
+    <script src="/game-TDD/assets/js/models/rockPoints.js"></script>
+    <script src="/game-TDD/assets/js/models/nutPoints.js"></script>
+    <script src="/game-TDD/assets/js/models/questions/livecounter.js"></script>
+    <script src="/game-TDD/assets/js/models/player.js"></script>
+    <script src="/game-TDD/assets/js/models/questions/questionBox.js"></script>
+    <script src="/game-TDD/assets/js/models/questions/question.js"></script>
+    <script src="/game-TDD/assets/js/main.js"></script>
+
+    
+    <audio src="/game-TDD/assets/soundEffects/blip.mp3" id="points-sound"></audio>
+    <audio src="/game-TDD/assets/soundEffects/game-over.mp3" id="game-over_sound"></audio>
+    <audio src="/game-TDD/assets/soundEffects/game-start.mp3" id="game-start"></audio>
+    <audio src="/game-TDD/assets/soundEffects/power-up.mp3" id="power-up"></audio>
+    <audio src="/game-TDD/assets/soundEffects/backgourndMusic.mp3" id="backgroundMusic"></audio>
+    <audio src="/game-TDD/assets/soundEffects/right-answer.mp3"id="right-answer"></audio>
+    <audio src="/game-TDD/assets/soundEffects/wrong-answer.mp3" id="wrong-answer"></audio>
+    <audio src="/game-TDD/assets/soundEffects/enemyHit.mp3" id="enemy-hit"></audio> --}}
