@@ -10,6 +10,9 @@ module.exports.renderGame = (req, res, next) => {
 
 module.exports.endGame = (req, res, next) => {
     let {score} = req.body
+    if (req.currentUser === undefined){
+        console.log("hacer algo aqui")
+    }
     User.findById({_id: req.currentUser.id})
         .then((user)=>{
             if (score > user.highestScore){
