@@ -235,6 +235,7 @@ class Game {
         this.gameOverSound.play();
         let score = this.scoreNum;
         return axios.post('http://localhost:3000/savepoints', { score })
+       
         console.log("**SCORE***-->", score)
         
       }
@@ -268,6 +269,8 @@ class Game {
         this.gameOverSound.play();
         let score = this.scoreNum;
         return axios.post('http://localhost:3000/savepoints', { score })
+     
+      
         console.log("**SCORE***-->", score)
       
       }
@@ -303,6 +306,8 @@ class Game {
         this.gameOverSound.play();
         let score = this.scoreNum;
         return axios.post('http://localhost:3000/savepoints', { score})
+        
+        
         console.log("**SCORE***-->", score)
       }
     }
@@ -330,6 +335,9 @@ class Game {
         this.gameOverSound.play();
         let score = this.scoreNum;
         return axios.post('http://localhost:3000/savepoints', { score })
+
+
+       
         console.log("**SCORE***-->", score)
       }
     }

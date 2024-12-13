@@ -1,10 +1,12 @@
+<head>
+  <link rel="stylesheet" href="/styles/my-island.css" />
+</head>
 
+<div class="card" style="width:fit-content; padding: 4px; background-color: rgba(0, 0, 0, 0.6); color:white;">
+  <h2>Welcome to {{island.name}}</h2>
+</div>
 
-
-<h1>Welcome to {{island.name}}</h1>
-
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+<div class="card my-3" style="width: 18rem; background-color: rgba(0, 0, 0, 0.6); color:white;">
   <div class="card-body">
     <h5 class="card-title">Guardian:{{currentUser.username}}</h5>
     <h5 class="card-title">Theme:{{island.theme}}</h5>
@@ -12,26 +14,31 @@
 
     <a href="#" class="btn btn-secondary">Visit other islands!</a>
 
-
-
   </div>
 </div>
 
-<div class="card my-3" style="width: 18rem;">
+<div class="card my-3" style="width: 18rem; background-color: rgba(0, 0, 0, 0.6); color:white;">
   <div class="card-body">
     Creatures:
-      {{#if creatures}}
-    <ul>
-  {{#each creatures as |creature|}}
-  <li>{{creature.commonName}} </li>
-  {{/each}}
-    </ul>
-  <a href="/creature/edit-my" class="btn btn-secondary">Edit my creatures!</a>
-  {{else}}
-  <a href="/creature/list" class="btn btn-secondary">Add some creatures!</a>
-  {{/if}}
+    {{#if creatures}}
+      <ul>
+        {{#each creatures as |creature|}}
+          <li>{{creature.commonName}} </li>
+        {{/each}}
+      </ul>
+      <a href="/creature/edit-my" class="btn btn-secondary">Edit my creatures!</a>
+    {{else}}
+      <a href="/creature/list" class="btn btn-secondary">Add some creatures!</a>
+    {{/if}}
 
   </div>
 </div>
 
-<a href="/my-island/{{currentUser.id}}/edit" class="btn btn-primary">Edit my island</a>
+<a href="/my-island/{{currentUser.id}}/edit" class="btn btn-primary">Edit my
+  island</a>
+
+<img
+  src="/images/elephant.gif"
+  style="width: 120px; position: absolute; left: 550px; top: 280px;"
+  alt=""
+/>

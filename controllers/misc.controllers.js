@@ -9,37 +9,33 @@ module.exports.renderGame = (req, res, next) => {
 }
 
 module.exports.endGame = (req, res, next) => {
-    let {score} = req.body
-    if (req.currentUser === undefined){
-        console.log("hacer algo aqui")
-    }
-    User.findById({_id: req.currentUser.id})
-        .then((user)=>{
-            if (score > user.highestScore){
-                User.findOneAndUpdate({_id: req.currentUser.id},{highestScore:score})
-                .then(()=>{
-                    console.log("score updated")
-                    setTimeout(() => {
-                        console.log("entered 1")
-                        return res.render('end-game')
-                        
-                      }, 2000);
-                })
-                .catch((error)=>next(error))
-            } else {
-                console.log("score is not high to update")
-                
-                    setTimeout(() => {
-                        console.log("entered 2")
-                        return res.render('end-game')
-                        
-                      }, 2000);
-            }
-            
-        })
-        .catch((error)=>next(error))
+    console.log("Game Over: Processing end game logic...");
+    const { score } = req.body;
 
-}
+    if (req.currentUser === undefined) {
+        console.log("User not authenticated");
+        return res.status(400).json({ error: 'User not authenticated' });
+    }
+
+    User.findById(req.currentUser.id)
+        .then((user) => {
+            if (score > user.highestScore) {
+                // If score is higher, update it
+                return User.findOneAndUpdate({ _id: req.currentUser.id }, { highestScore: score })
+                    .then(() => {
+                        console.log("Score updated");
+                        res.render('end-game', { score }); // Render page after score update
+                    });
+            } else {
+                console.log("Score is not high enough to update");
+                res.render('end-game', { score }); // Render page without score update
+            }
+        })
+        .catch((error) => {
+            console.error("Error processing user or score update:", error);
+            next(error); // Pass error to next middleware
+        });
+};
 module.exports.welcome = (req, res ,next) => {
     res.render('users/welcome')
 }
