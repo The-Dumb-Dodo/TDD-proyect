@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Island = require("../models/Island.model");
 const Creature = require("../models/Creature.model");
+const User = require("../models/User.model");
 //const { search } = require("../routes/routes");
 
 module.exports.getIslands = (req, res, next) => {
@@ -122,35 +123,44 @@ module.exports.doEditMyIsland = (req, res, next) => {
 };
 
 module.exports.exploreIsland = (req, res, next) => {
-  const {id} = req.params
-// undesrtand how to incorporate the guardina here, so we dont render the name of the current user
+  const { id } = req.params;
+  // undesrtand how to incorporate the guardina here, so we dont render the name of the current user
   Island.findById(id)
-    .then((island)=>{
+    .then((island) => {
       console.log("Island creatures-->:", island.creatures);
       const creaturesPromisesArray = island.creatures.map((creatureId) =>
         Creature.findById(creatureId)
+      );
 
-      
-    );
-
-    Promise.all(creaturesPromisesArray)
-      .then((creaturesArray) => {
-        console.log("**Island creature IN ARRAY-->:", creaturesArray);
-        if (creaturesArray.length === 0) {
-          res.render("island/island-explore", {island});
-        } else {
-          res.render("island/island-explore", {
-            island,
-            creatures: creaturesArray,
+      Promise.all(creaturesPromisesArray)
+        .then((creaturesArray) => {
+          User.findById(island.guardian)
+          .then((guardian) => {
+            console.log("**Island creature IN ARRAY-->:", creaturesArray);
+            if (creaturesArray.length === 0) {
+              res.render("island/island-explore", { island });
+            } else {
+              res.render("island/island-explore", {
+                island,
+                creatures: creaturesArray,
+                guardian
+              });
+              
+            }
           });
-        }
-      })
-      .catch((error) => {
-        next(error);
-      });
+          
+          
+        })
+        .catch((error) => {
+          next(error);
+        })
     })
     .catch((error) => {
-      next(error)
+      next(error);
     });
-}
+};
+
+    
+  
+
 

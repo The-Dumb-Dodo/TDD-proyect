@@ -1,34 +1,28 @@
-{{!-- // undesrtand how to incorporate the guardina here, so we dont render the name of the current user --}}
 
 <h1>Welcome to {{island.name}} island </h1>
 
 <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Guardian:{{currentUser.username}}</h5>
+    <h5 class="card-title">Guardian:{{guardian.username}}</h5>
     <h5 class="card-title">Theme:{{island.theme}}</h5>
     <p class="card-text"></p>
-
-    <a href="#" class="btn btn-secondary">Visit other islands!</a>
-
-
-
   </div>
 </div>
 
 <div class="card my-3" style="width: 18rem;">
   <div class="card-body">
     Creatures:
-      {{#if creatures}}
+      
     <ul>
   {{#each creatures as |creature|}}
-  <li>{{creature.commonName}} </li>
+  <li>{{creature.fictionalName}} </li>
+  <a href="/creature/creatures-explore/{{./../island.id}}/" class="btn btn-secondary">Explore the creatures</a>
   {{/each}}
     </ul>
-  <a href="/creature/edit-my" class="btn btn-secondary">Explore the creatures</a>
-  {{else}}
+  
   <a href="/creature/list" class="btn btn-secondary">Soon there will be some creatures</a>
-  {{/if}}
+  
 
   </div>
 </div>
