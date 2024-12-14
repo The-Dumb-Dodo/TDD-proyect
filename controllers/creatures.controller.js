@@ -1,6 +1,7 @@
 const Creature = require("../models/Creature.model");
 const mongoose = require("mongoose");
 const Island = require("../models/Island.model");
+const { redirect } = require("express/lib/response");
 
 
 // The creature directory: where you can see all the pokemons
@@ -43,8 +44,8 @@ module.exports.addToMyIsland = (req, res, next) => {
 
 }
 
-module.exports.editMyCreatures = (req, res , next) => {
 
+module.exports.editMyCreatures = (req, res , next) => {
   Island.findOne({ guardian: new mongoose.Types.ObjectId(req.currentUser.id) })
   .then((island) => {
     const creaturesPromisesArray = island.creatures.map((creatureId) =>
@@ -65,6 +66,31 @@ module.exports.editMyCreatures = (req, res , next) => {
   
 }
 
+module.exports.exploreCreatures = (req, res , next) => {
+
+  const {id} = req.params;
+
+  Island.findById(id)
+  .then((island) => {
+    console.log("WE ARE INSIDE ISLAND***** ->", island)
+    const creaturesPromisesArray = island.creatures.map((creatureId) =>
+      Creature.findById(creatureId)
+    );
+
+
+    Promise.all(creaturesPromisesArray)
+      .then((creaturesArray) => {
+        res.render("creatures/creatures-explore", { creatures: creaturesArray });
+      })
+      .catch((error) => {
+        next(error);
+      });
+  })
+  .catch((error) => {
+    next(error);
+  });
+  
+}
 module.exports.doEditMyCreatures = (req, res , next) => {
   
 }

@@ -1,0 +1,12 @@
+<h1> My island has some cool creatures! check them out</h1>
+
+<ul class="list-group my-3">
+  {{#each creatures as |creature|}}
+   <li class="list-group-item d-flex align-items-center justify-content-between">
+  <span>{{creature.fictionalName}}</span>
+ 
+</li>
+
+  {{/each}}
+
+</ul>
