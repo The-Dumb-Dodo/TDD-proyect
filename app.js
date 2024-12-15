@@ -1,4 +1,3 @@
-
 require('dotenv').config()
 const cookieParser = require("cookie-parser");
 // Connection to DB

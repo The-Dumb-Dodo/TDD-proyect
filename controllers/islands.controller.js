@@ -82,14 +82,12 @@ module.exports.myIsland = (req, res, next) => {
 
       Promise.all(creaturesPromisesArray)
         .then((creaturesArray) => {
-          if (creaturesArray.length === 0) {
-            res.render("island/my-island", {island});
-          } else {
+          
             res.render("island/my-island", {
               island,
               creatures: creaturesArray,
             });
-          }
+          
         })
         .catch((error) => {
           next(error);

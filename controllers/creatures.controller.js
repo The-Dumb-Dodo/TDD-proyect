@@ -72,7 +72,7 @@ module.exports.exploreCreatures = (req, res , next) => {
 
   Island.findById(id)
   .then((island) => {
-    console.log("WE ARE INSIDE ISLAND***** ->", island)
+    
     const creaturesPromisesArray = island.creatures.map((creatureId) =>
       Creature.findById(creatureId)
     );
@@ -80,7 +80,12 @@ module.exports.exploreCreatures = (req, res , next) => {
 
     Promise.all(creaturesPromisesArray)
       .then((creaturesArray) => {
-        res.render("creatures/creatures-explore", { creatures: creaturesArray });
+        if(creaturesArray.length === 0){
+          res.render("creatures/creatures-explore")
+        } else {
+          res.render("creatures/creatures-explore", { creatures: creaturesArray });
+
+        }
       })
       .catch((error) => {
         next(error);

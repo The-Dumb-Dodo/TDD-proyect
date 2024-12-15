@@ -17,12 +17,13 @@
     <ul>
   {{#each creatures as |creature|}}
   <li>{{creature.fictionalName}} </li>
-  <a href="/creature/creatures-explore/{{./../island.id}}/" class="btn btn-secondary">Explore the creatures</a>
   {{/each}}
     </ul>
-  
+  {{#if creatures}}
+  <a href="/creature/creatures-explore/{{island.id}}" class="btn btn-secondary">Explore the creatures</a>
+  {{else}}
   <a href="/creature/list" class="btn btn-secondary">Soon there will be some creatures</a>
-  
+  {{/if}}
 
   </div>
 </div>
