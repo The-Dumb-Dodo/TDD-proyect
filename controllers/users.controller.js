@@ -68,3 +68,19 @@ module.exports.create = (req, res, next) => {
       .catch((error) => next(error))
       
   }
+
+  module.exports.getTopScore = (req, res, next) =>{
+    User.find()
+    .then((usersArray)=>{
+      const scores = [];
+      usersArray.forEach((user)=>{
+        scores.push({name: user.username, highestScore: user.highestScore})
+      })
+      const topTen = scores.sort((a,b)=>b.highestScore-a.highestScore).slice(0,10)
+      
+      console.log("***this are the scores****", scores)
+      console.log("this are the top ten--->>>", topTen)
+      res.render('users/top-score', {topTen})
+    })
+    .catch((error) => next(error))
+  }

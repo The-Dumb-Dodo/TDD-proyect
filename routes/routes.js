@@ -59,6 +59,7 @@ router.post('/signin', isNotAuthenticated, authController.doSignin)
 router.get('/profile', isAuthenticated, usersController.getCurrentUserProfile)
 router.get('/profile-edit', isAuthenticated, usersController.editProfile)
 router.post('/profile-edit', isAuthenticated, usersController.doEditProfile)
+router.get('/top-score', isAuthenticated, usersController.getTopScore)
 // router.get('/users/:id', isAuthenticated, usersController.getUserProfile)
 
 
