@@ -8,11 +8,11 @@ module.exports.create = (req, res, next) => {
 
   module.exports.doCreate = (req, res, next) => {
 
-    // const fields = {
-    //     ...req.body,
-    //     image: req.file.path
-    //   }
-    User.create(req.body)
+    const fields = {
+      ...req.body,
+      image: req.file.path
+    }
+    User.create(fields)
       .then(() => {
         res.redirect('/welcome')
       })
@@ -60,8 +60,14 @@ module.exports.create = (req, res, next) => {
   }
 
   module.exports.doEditProfile = (req,res,next)=>{
+
+    const fields = {
+      ...req.body,
+      image: req.file.path
+    }
+
     User.findOneAndUpdate({_id: req.currentUser.id },
-    req.body)
+    fields)
     .then(()=>{
         res.redirect('/profile')
       })

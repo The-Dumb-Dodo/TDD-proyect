@@ -38,7 +38,11 @@
   island</a>
 
  {{#each creatures as |creature |}}
-    <img src="images/creatures/{{creature.commonName}}.jpg" alt="{{creature.commonName}}" class="creature" style=" width:70px; position: absolute; {{randomPosition 800 600 320 43 50}}">
+ <div class="creature-container">
+  <img src="images/creatures/{{creature.commonName}}.jpg" alt="{{creature.name}}" class="creature-img">
+  <div class="creature-message">Hi, I’m {{creature.commonName}}!</div>
+</div>
+    
   {{/each}}
 </body>
 
