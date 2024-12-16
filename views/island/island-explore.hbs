@@ -1,8 +1,15 @@
 
-<h1>Welcome to {{island.name}} island </h1>
+<head>
+  <link rel="stylesheet" href="/styles/my-island.css" />
+</head>
 
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+<body style="background-image: url('/images/island.themes/{{island.theme}}.jpg');">
+  
+
+<div style="width:fit-content; padding: 4px; background-color: rgba(0, 0, 0, 0.6); color:white;"> <h1>Welcome to {{island.name}} island</h1> </div>
+
+<div class="card my-3" style="width: 18rem;">
+ 
   <div class="card-body">
     <h5 class="card-title">Guardian:{{guardian.username}}</h5>
     <h5 class="card-title">Theme:{{island.theme}}</h5>
@@ -27,4 +34,4 @@
 
   </div>
 </div>
-
+</body>
