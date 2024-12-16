@@ -27,6 +27,9 @@
   {{/each}}
     </ul>
   {{#if creatures}}
+  {{#each creatures as |creature |}}
+    <img src="/images/creatures/{{creature.commonName}}.jpg" alt="{{creature.commonName}}" class="creature" style=" width:70px; position: absolute; {{randomPosition 800 600 320 43 50}}">
+  {{/each}}
   <a href="/creature/creatures-explore/{{island.id}}" class="btn btn-secondary">Explore the creatures</a>
   {{else}}
   <a href="/creature/list" class="btn btn-secondary">Soon there will be some creatures</a>
@@ -34,4 +37,7 @@
 
   </div>
 </div>
+{{!-- {{#each creatures as |creature |}}
+    <img src="images/creatures/{{creature.commonName}}.jpg" alt="{{creature.commonName}}" class="creature" style=" width:70px; position: absolute; {{randomPosition 800 600 320 43 50}}">
+  {{/each}} --}}
 </body>
