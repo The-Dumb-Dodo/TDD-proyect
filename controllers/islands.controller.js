@@ -125,7 +125,7 @@ module.exports.exploreIsland = (req, res, next) => {
   // undesrtand how to incorporate the guardina here, so we dont render the name of the current user
   Island.findById(id)
     .then((island) => {
-      console.log("Island creatures-->:", island.creatures);
+      
       const creaturesPromisesArray = island.creatures.map((creatureId) =>
         Creature.findById(creatureId)
       );
@@ -134,7 +134,7 @@ module.exports.exploreIsland = (req, res, next) => {
         .then((creaturesArray) => {
           User.findById(island.guardian)
           .then((guardian) => {
-            console.log("**Island creature IN ARRAY-->:", creaturesArray);
+           
             if (creaturesArray.length === 0) {
               res.render("island/island-explore", { island });
             } else {
