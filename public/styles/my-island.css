@@ -1,5 +1,5 @@
 body {
-    background-image: url('/images/top-view-island.jpg');
+    
     background-size: cover; /* Ensures the image covers the whole viewport */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
