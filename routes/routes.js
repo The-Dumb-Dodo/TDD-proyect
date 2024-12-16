@@ -46,7 +46,7 @@ router.get('/creature/creatures-explore/:id', creaturesController.exploreCreatur
 
 //Users subscribe 
 router.get('/subscribe', isNotAuthenticated, usersController.create)
-router.post('/subscribe', isNotAuthenticated, usersController.doCreate)
+router.post('/subscribe', isNotAuthenticated, upload.single('image'), usersController.doCreate)
 
 //Users sign in 
 router.get('/signin', isNotAuthenticated, authController.signin)
@@ -58,7 +58,7 @@ router.post('/signin', isNotAuthenticated, authController.doSignin)
 // //Users 
 router.get('/profile', isAuthenticated, usersController.getCurrentUserProfile)
 router.get('/profile-edit', isAuthenticated, usersController.editProfile)
-router.post('/profile-edit', isAuthenticated, usersController.doEditProfile)
+router.post('/profile-edit', isAuthenticated, upload.single('image'),usersController.doEditProfile)
 router.get('/top-score', isAuthenticated, usersController.getTopScore)
 // router.get('/users/:id', isAuthenticated, usersController.getUserProfile)
 

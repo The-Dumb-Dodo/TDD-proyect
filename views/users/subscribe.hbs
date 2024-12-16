@@ -1,4 +1,12 @@
-<form action="/subscribe" method="post" >
+<form action="/subscribe" method="post" enctype="multipart/form-data">
+
+ <div class="mb-3">
+    <label for="image" class="form-label">Imagen de perfil</label>
+    <input class="form-control {{#if errors.image}}is-invalid{{/if}}" type="file" id="image" name="image" >
+    <div class="invalid-feedback">
+      {{errors.image}}
+    </div>
+  </div>
 
 <div class="mb-3">
      <div class="mb-3">
@@ -14,6 +22,7 @@
       {{errors.username}}
     </div>
   </div>
+
     <label for="email" class="form-label">Email</label>
     <input 
       type="email" 

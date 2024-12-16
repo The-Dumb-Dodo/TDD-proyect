@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const ROUNDS = 10;
-  
+
+const DEFAULT_IMAGE_URL = 'https://example.com/default-image.jpg';
+const URL_PATTERN = /^(https?:\/\/)?([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$/
 const EMAIL_PATTERN =
 /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
@@ -32,6 +34,11 @@ const userSchema = new mongoose.Schema(
   highestScore: {
     type: Number,
     default: 0,
+  },
+  image: {
+    type: String,
+    match: [URL_PATTERN, 'La imagen debe ser una URL válida'],
+    default: DEFAULT_IMAGE_URL
   },
 }, 
   {
