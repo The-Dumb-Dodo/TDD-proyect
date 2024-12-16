@@ -19,3 +19,15 @@ hbs.registerHelper("getCategoryLabel", function (category, cast, options) {
 
   return categoryFound.label || "";
 });
+
+
+
+hbs.registerHelper('randomPosition', (maxWidth, maxHeight, leftOffset = 320, topBuffer = 43, elementBuffer = 0) => {
+  const availableWidth = maxWidth - leftOffset - elementBuffer; // Available width for creatures
+  const availableHeight = maxHeight - topBuffer - elementBuffer; // Available height for creatures
+  
+  const randomLeft = Math.floor(Math.random() * availableWidth) + leftOffset;
+  const randomTop = Math.floor(Math.random() * availableHeight) + topBuffer;
+
+  return `top: ${randomTop}px; left: ${randomLeft}px;`;
+});

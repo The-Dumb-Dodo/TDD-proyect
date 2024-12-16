@@ -37,11 +37,9 @@
 <a href="/my-island/{{currentUser.id}}/edit" class="btn btn-primary">Edit my
   island</a>
 
-<img
-  src="/images/elephant.gif"
-  style="width: 120px; position: absolute; left: 550px; top: 280px;"
-  alt=""
-/>
+ {{#each creatures as |creature |}}
+    <img src="images/creatures/{{creature.commonName}}.jpg" alt="{{creature.commonName}}" class="creature" style=" width:70px; position: absolute; {{randomPosition 800 600 320 43 50}}">
+  {{/each}}
 </body>
 
 
