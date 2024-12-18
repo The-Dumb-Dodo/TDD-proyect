@@ -99,3 +99,20 @@ module.exports.exploreCreatures = (req, res , next) => {
 module.exports.doEditMyCreatures = (req, res , next) => {
   
 }
+
+module.exports.removeCreatures = (req, res, next) =>{
+  console.log('***ENTERED IN REMOVE***')
+  const {id} = req.params
+  console.log('the id__----->>>',id)
+  Island.findOneAndUpdate({guardian : req.currentUser.id}
+    ,{ $pull: { creatures:id} }, 
+    { new: true } )
+    .then((island)=>{
+      
+      console.log("***CREATURE REMOVED", island.creatures)
+      res.redirect('/creature/edit-my')
+    })
+    .catch((error) => {
+      next(error);
+    });
+}

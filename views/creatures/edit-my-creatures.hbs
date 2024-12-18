@@ -4,9 +4,9 @@
   {{#each creatures as |creature|}}
    <li class="list-group-item d-flex align-items-center justify-content-between">
   <span>{{creature.commonName}}</span>
-  <form action="/creature/addToMyIsland/{{creature._id}}" method="POST">
-    <button class="btn btn-danger" type="submit">Delete</button>
-  </form>
+  
+    <a href="/creature/remove/{{creature._id}}" class="btn btn-danger" >remove</a>
+  
 </li>
 
   {{/each}}
