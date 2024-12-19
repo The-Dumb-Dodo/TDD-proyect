@@ -1,17 +1,32 @@
-<h1>You should be able to see cool creatures here</h1>
+<head>
+  <link rel="stylesheet" href="/styles/home-page.css" />
+</head>
 
-<div class="row row-cols-1 row-cols-md-3 g-4 my-3">
-{{#each creatures}}
-  <div class="col">
-    <div class="card">
-      <img src="{{this.image}}" style="height: 400px; object-fit: cover;" class="card-img-top" alt="{{this.commonName}}">
-      <div class="card-body">
-        <h5 class="card-title">{{this.fictionalName}}</h5>
-        <p class="card-text">{{this.commonName}}-{{this.class}}-{{this.conservationStatus}}</p>
-    <a class="btn btn-primary" href="/creature/detail/{{this.id}}">See details</a>
+<div class="container mt-4 p-5" style="background-color: rgba(0, 0, 0, 0.6); border-radius: 16px;">
+  <h1 style="text-align: center; color:white;" >Explore our creatures!!</h1>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 my-3">
+    {{#each creatures}}
+      <div class="col">
+        <div class="card" style="border-radius: 16px; overflow:hidden;">
+          <img
+            src="{{this.image}}"
+            style="height: 400px; object-fit: cover;"
+            class="card-img-top"
+            alt="{{this.commonName}}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{this.fictionalName}}</h5>
+            <p
+              class="card-text"
+            >{{this.commonName}}-{{this.class}}-{{this.conservationStatus}}</p>
+            <a class="btn btn-primary" href="/creature/detail/{{this.id}}" style="border-radius: 16px;">See
+              details</a>
+          </div>
+        </div>
       </div>
-    </div>
+    {{/each}}
+
   </div>
- {{/each}}
- 
+
 </div>

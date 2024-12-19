@@ -1,12 +1,22 @@
-<h1> My island has some cool creatures! check them out</h1>
+<head>
+  <link rel="stylesheet" href="/styles/home-page.css" />
+</head>
 
-<ul class="list-group my-3">
-  {{#each creatures as |creature|}}
-   <li class="list-group-item d-flex align-items-center justify-content-between">
-  <span>{{creature.fictionalName}}</span>
- 
-</li>
+<div class="container mt-4">
 
-  {{/each}}
+  <h1> My island has some cool creatures! check them out</h1>
 
-</ul>
+  <ul class="list-group my-3">
+    {{#each creatures as |creature|}}
+      <li
+        class="list-group-item d-flex align-items-center justify-content-between"
+      >
+        <span>{{creature.fictionalName}}</span>
+
+      </li>
+
+    {{/each}}
+
+  </ul>
+
+</div>

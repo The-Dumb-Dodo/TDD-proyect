@@ -31,3 +31,7 @@ hbs.registerHelper('randomPosition', (maxWidth, maxHeight, leftOffset = 320, top
 
   return `top: ${randomTop}px; left: ${randomLeft}px;`;
 });
+
+hbs.registerHelper('addOne', function(value) {
+  return value + 1;
+});
