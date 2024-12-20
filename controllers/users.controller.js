@@ -2,11 +2,13 @@ const mongoose = require('mongoose')
 const User = require('../models/User.model')
 const Island = require('../models/Island.model')
 
+
 module.exports.create = (req, res, next) => {
     res.render('users/subscribe')
   }
 
   module.exports.doCreate = (req, res, next) => {
+    console.log("**REQFILE:***", req.file)
 
     const fields = {
       ...req.body,
