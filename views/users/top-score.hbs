@@ -1,6 +1,21 @@
-<h1>Here will be the top score</h1>
-<ol>
-{{#each topTen as |user| }}
-<li>User name: {{user.name}} // Score: {{user.highestScore}}</li>
-{{/each}}
-</ol>
+<head>
+  <link rel="stylesheet" href="/styles/home-page.css" />
+</head>
+
+<div class="container mt-4 p-4">
+
+    <h1 style="text-align: center;">Top ten dodos!! </h1>
+    <div class="row">
+      <ol class="list-group my-3">
+        {{#each topTen as |user|}}
+          <li
+            class="list-group-item d-flex align-items-center justify-content-between"
+          >{{addOne @index}}. User name: {{user.name}} // Score: {{user.highestScore}}</li>
+        {{/each}}
+      </ol>
+
+    </div>
+
+
+
+</div>
