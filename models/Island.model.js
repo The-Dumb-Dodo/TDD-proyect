@@ -13,7 +13,7 @@ const islandSchema = new mongoose.Schema({
   },
   theme: {
     type: String,
-    enum: ['Moriss Nest', 'Tamatave Tropics', 'Pamplemousse Palms ', 'FlicFlac Bay'], 
+    enum: ['Moriss Nest', 'Tamatave Tropics', 'Pamplemousse Palms', 'FlicFlac Bay'], 
     default: 'Moriss Nest',
   },
   creatures: [

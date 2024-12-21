@@ -1,13 +1,20 @@
-<head>
+{{!-- <head>
   <link rel="stylesheet" href="/styles/home-page.css" />
-</head>
+</head> --}}
 
-<div class="container mt-4 p-4">
-<h1>Edit my island:</h1>
+
+
+<body
+  style="background-image: url('/images/island.themes/{{island.theme}}.jpg');  background-repeat: no-repeat;
+    
+    background-size: cover;"
+>
+<div class="container mt-4 p-4" style="background-color: rgba(0, 0, 0, 0.6); border-radius:16px;">
+<h1 style="color: white;">Edit my island:</h1>
 <form action="/my-island/:id/edit" method="post">
   <div class="mb-3">
-    <label class="form-label">Guardian:</label>
-  <p class="form-label" >{{currentUser.username}}</p>
+    <label class="form-label" style="font-size: 25px; font-weight:bold; color: white;">Guardian:</label>
+  <p style="font-size: 25px; font-weight:bold; color: white;" class="form-label" >{{currentUser.username}}</p>
   </div>
   <div class="mb-3">
     <label for="name" class="form-label">Island Name</label>
@@ -31,7 +38,7 @@
       id="theme" 
       name="theme" 
       required>
-      <option value="" disabled {{#unless island.theme}}selected{{/unless}}>Select a theme</option>
+      <option value="" disabled selected>Select a theme</option>
       <option value="Moriss Nest" >Moriss Nest</option>
       <option value="Tamatave Tropics" >Tamatave Tropics</option>
       <option value="Pamplemousse Palms" >Pamplemousse Palms</option>
@@ -49,4 +56,6 @@
 
 
 </div>
+
+</body>
 

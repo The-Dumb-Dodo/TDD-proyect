@@ -37,7 +37,7 @@
         {{#if creatures}}
           {{#each creatures as |creature|}}
             <img
-              src="/images/creatures/{{creature.commonName}}.jpg"
+              src="/images/creatures/{{creature.commonName}}.png"
               alt="{{creature.commonName}}"
               class="creature"
               style=" width:70px; position: absolute; {{randomPosition
@@ -52,9 +52,11 @@
           <a
             href="/creature/creatures-explore/{{island.id}}"
             class="btn btn-secondary"
+            style="border-radius:23px;  padding: 5px 15px 5px 15px;"
           >Explore the creatures</a>
         {{else}}
-          <a href="/creature/list" class="btn btn-secondary">Soon there will be
+          <a href="/creature/list" class="btn btn-secondary"
+          style="border-radius:23px;  padding: 5px 15px 5px 15px;">Soon there will be
             some creatures</a>
         {{/if}}
 
