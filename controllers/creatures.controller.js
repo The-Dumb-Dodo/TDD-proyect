@@ -54,7 +54,7 @@ module.exports.editMyCreatures = (req, res , next) => {
 
     Promise.all(creaturesPromisesArray)
       .then((creaturesArray) => {
-        res.render("creatures/edit-my-creatures", { creatures: creaturesArray });
+        res.render("creatures/edit-my-creatures", { creatures: creaturesArray, island });
       })
       .catch((error) => {
         next(error);
@@ -96,6 +96,18 @@ module.exports.exploreCreatures = (req, res , next) => {
   });
   
 }
-module.exports.doEditMyCreatures = (req, res , next) => {
-  
+
+module.exports.removeCreature = (req, res, next) => {
+  const {id} = req.params
+  Island.findOneAndUpdate(
+    { guardian: req.currentUser.id }, 
+    { $pull: { creatures: id } },
+    { new: true, runValidators: true } 
+  )
+    .then(()=>{
+      res.redirect('/creature/edit-my')
+    })
+    .catch((error) => {
+      next(error);
+    });
 }

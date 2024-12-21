@@ -1,64 +1,42 @@
 [
   {
-    "fictionalName": "Wave Rider",
-    "commonName": "Loggerhead Sea Turtle",
-    "class": "Reptiles",
-    "conservationStatus": "EN",
-    "intro": "A chill ocean traveler that rides the waves like a pro, spreading conservation vibes wherever it swims.",
-    "places": "Coastal waters",
-    "habitats": "Sea beds and sandy beaches",
-    "image": "https://storage.googleapis.com/pixelart_results/df9035c1-a483-46e7-92d9-a0531f9a56e0.png"
-  },
-  {
-    "fictionalName": "Shadow Hunter",
+    "fictionalName": "Lynxie",
     "commonName": "Iberian Lynx",
     "class": "Mammals",
-    "conservationStatus": "EN",
-    "intro": "The stealthy big cat with a fur coat that screams style and a leap that leaves you in awe.",
-    "places": "Iberian Peninsula",
-    "habitats": "Shrublands and open forests",
-    "image": "https://storage.googleapis.com/pixelart_results/fa642278-860c-4c08-9dba-1f19415d8a9a.png"
-  },
-  {
-    "fictionalName": "Leaf Dancer",
-    "commonName": "Kakapo",
-    "class": "Birds",
     "conservationStatus": "CR",
-    "intro": "A nocturnal parrot that grooves like no other on forest floors with its quirky waddle.",
-    "places": "New Zealand forests",
-    "habitats": "Dense woodlands",
-
-    "image": "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fseq8nvhnl5s31.png"
-
+    "intro": "Lynxie is a swift and agile feline, known for its iconic spotted coat and impressive leap. Its keen senses help it navigate the dense Iberian forests with ease.",
+    "places": "Iberian Peninsula, Spain, Portugal",
+    "habitats": "Dense forests, scrublands",
+    "image": "https://example.com/lynxie.png"
   },
   {
-    "fictionalName": "Ocean Whisperer",
-    "commonName": "Vaquita",
+    "fictionalName": "Wolfie",
+    "commonName": "Iberian Wolf",
     "class": "Mammals",
-    "conservationStatus": "CR",
-    "intro": "The elusive and charming porpoise, known as the 'panda of the sea,' whispering its tale of survival.",
-    "places": "Northern Gulf of California",
-    "habitats": "Shallow coastal waters",
-    "image": " https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1e9c46ec-1601-4b28-88fe-298ce6f1395a/dercn58-2b8a3b35-cd97-4587-bf2a-32a92b282080.png/v1/fill/w_1032,h_774/vaquita_pixel_art_by_queen_clam_dercn58-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYwIiwicGF0aCI6IlwvZlwvMWU5YzQ2ZWMtMTYwMS00YjI4LTg4ZmUtMjk4Y2U2ZjEzOTVhXC9kZXJjbjU4LTJiOGEzYjM1LWNkOTctNDU4Ny1iZjJhLTMyYTkyYjI4MjA4MC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.RTAShYvnKZV1Swi3713dEDV682Tf6xZ_T_EUSrK3CsM"
+    "conservationStatus": "EN",
+    "intro": "Wolvie is a strong and resilient creature, often seen roaming the wild mountains and valleys. It has a distinctive howl and a deep connection to the rugged Iberian landscapes.",
+    "places": "Iberian Mountains, Spain, Portugal",
+    "habitats": "Forests, rocky terrains",
+    "image": "https://example.com/wolvie.png"
   },
   {
-    "fictionalName": "Sand Stomper",
-    "commonName": "African Desert Elephant",
+    "fictionalName": "Bruin",
+    "commonName": "Iberian Brown Bear",
     "class": "Mammals",
     "conservationStatus": "VU",
-    "intro": "The gentle giant that stomps through the desert with grace, keeping ecosystems in check.",
-    "places": "African savannahs and deserts",
-    "habitats": "Arid plains and grasslands",
-    "image": "https://storage.googleapis.com/pixelart_results/68d1d55b-1fcd-46c0-b25f-49ad5d6a8a44.png"
+    "intro": "Bruin is a gentle giant, known for its thick fur and powerful stance. It navigates the dense forests and rivers, keeping a watchful eye on its surroundings.",
+    "places": "Northern Iberian Mountains, Spain, Portugal",
+    "habitats": "Forests, alpine meadows",
+    "image": "https://example.com/bruin.png"
   },
   {
-    "fictionalName": "Midnight Glider",
-    "commonName": "Black Lemur",
-    "class": "Mammals",
-    "conservationStatus": "EN",
-    "intro": "A tree-hopping ninja with dazzling golden eyes that light up the night.",
-    "places": "Madagascar",
-    "habitats": "Tropical forests",
-    "image": "https://www.joelsartore.com/wp-content/uploads/stock/ANI042/ANI042-00044.jpg"
+    "fictionalName": "Vultaire",
+    "commonName": "Griffon Vulture",
+    "class": "Birds",
+    "conservationStatus": "LC",
+    "intro": "Vultaire soars high in the sky, keeping an eye out for its next meal. Its impressive wingspan and keen vision make it an iconic sight across the Iberian landscapes.",
+    "places": "Open skies across Iberia",
+    "habitats": "Cliffs, open fields",
+    "image": "https://example.com/vultaire.png"
   }
 ]

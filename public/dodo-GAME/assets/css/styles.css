@@ -5,6 +5,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 #counter {
   background-color: rgba(164, 148, 94, 0.9);
@@ -12,7 +13,7 @@ body {
   border-radius: 5px;
   position: absolute;
   text-transform: uppercase;
-  left: 65px;
+  left: 12px;
   top: 95px;
   display: flex;
   flex-direction: column;
@@ -31,8 +32,10 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+
   justify-content: center;
   align-items: center;
+  
   #questionBox {
     position: absolute;
     flex-direction: column;
@@ -94,7 +97,7 @@ margin-top: 2rem;
     font-size: 35px;
     color: white;
 
-    border-radius: 5px;
+    border-radius: 30px;
     padding: 10px;
     font-family: monospace;
     background-color: #d89d3d;
@@ -132,7 +135,7 @@ margin-top: 2rem;
     background-color: #47b44b;
     color: white;
 
-    border-radius: 5px;
+    border-radius: 30px;
     padding: 10px;
     font-family: monospace;
   }
@@ -157,13 +160,13 @@ margin-top: 2rem;
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  margin-top: 10px;
   width: 300px;
   height: 90px;
   background-color: #47b44b;
   color: white;
   border: none;
-  border-radius: 3px;
+  border-radius: 33px;
   font-size: 30px;
   cursor: pointer;
 
@@ -210,7 +213,7 @@ margin-top: 2rem;
   color: white;
   width: 700px;
   position: absolute;
-  top: 35%;
+  top: 41%;;
   left: 50%;
   transform: translate(-50%, -50%);
   /* background-color: rgba(255, 252, 252, 0.5); */
