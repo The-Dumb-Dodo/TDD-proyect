@@ -28,8 +28,4 @@ Wild-Escape is an interactive platform that combines gaming, education, and real
 
 ## 👥 Authors
 
-This project was designed and developed by **Emily Yang** and **Vladys Kolodnytskyy**.
-
----
-
-Feel free to modify or expand it based on additional details! 🚀
+This project was designed and developed by **Emily Yang** and **Vladys Kolodnytskyy**. 🚀
