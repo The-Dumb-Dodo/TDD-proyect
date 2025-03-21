@@ -1,6 +1,8 @@
-# Wild-Escape
+# TDD
 
-Wild-Escape is an interactive platform that combines gaming, education, and real-world impact to make wildlife conservation accessible to everyone. It serves as a centralized hub for wildlife conservation, allowing users to create, explore, and engage with virtual islands and creatures.
+TDD(The Dumb Dodo) is an interactive platform that combines gaming, education, and real-world impact to make wildlife conservation accessible to everyone. It serves as a centralized hub for wildlife conservation, allowing users to create, explore, and engage with virtual islands and creatures.
+
+- **Click here to try it out:** [TDD](https://tdd-proyect-dark-frog-7382.fly.dev/)
 
 ## 🛠 Technologies Used
 
@@ -25,6 +27,10 @@ Wild-Escape is an interactive platform that combines gaming, education, and real
 - 🔍 **View Creature Details** to learn more about them
 
   <img width="1443" alt="Screenshot 2025-03-10 at 17 32 51" src="https://github.com/user-attachments/assets/cfb9c320-1f9c-4e77-9ebd-7881e1471f90" />
+
+- 🎮 **Play our interactive game** to learn about our dodo friend
+
+
 
 ## 👥 Authors
 
